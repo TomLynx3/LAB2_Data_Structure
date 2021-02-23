@@ -12,7 +12,7 @@ public class LAB2_Zerebkovs {
         long startTime = 0;
         long endTime = 0;
 
-        int[] unsortedArr = utils.readArray("source.txt");
+        int[] unsortedArr = utils.readArray("source1.txt");
         int arraySize = 0;
         Scanner userChoice = new Scanner(System.in);
 
@@ -148,11 +148,13 @@ public class LAB2_Zerebkovs {
 
     static int[] improvedBubbleSort(int[] arr) {
         boolean wasSwapped;
-        for (int i = 0; i < arr.length - 1; i++) {
+
+        for (int i = 0; i < arr.length-1; i++) {
             wasSwapped = false;
-            for (int j = 0; j < arr.length - 1; j++) {
+            for (int j = 0; j < arr.length-i-1; j++) {
 
                 if (arr[j] > arr[j + 1]) {
+
                     swap(arr, j, j + 1);
                     wasSwapped = true;
 
@@ -166,6 +168,7 @@ public class LAB2_Zerebkovs {
     }
 
     static void swap(int[] arr, int position1, int position2) {
+
         int temp = arr[position1];
         arr[position1] = arr[position2];
         arr[position2] = temp;
